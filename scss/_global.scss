@@ -7,18 +7,6 @@ body {
     scroll-behavior: smooth;
   }
 
-html::-webkit-scrollbar {
-    width: 5px; /* ширина для вертикального скролла */
-    height: 0px; /* высота для горизонтального скролла */
-    background-color: rgb(243, 243, 243); /* цвет фона */
-    border-radius: 10px;
-}
-
-html::-webkit-scrollbar-thumb {
-    background-color: rgb(175, 175, 175);
-    border-radius: 10px;
-}
-
 *,
 *:before,
 *:after {
@@ -134,10 +122,13 @@ a{
    }
 }
 
-.email {
+.policy {
+   color: #ffffff;
+   &:hover {
+    text-decoration: underline;
+   }
 }
-.phone {
-}
+
 .bg {
     padding: 8px 25px;
     border-radius: 5px;

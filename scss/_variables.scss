@@ -9,10 +9,14 @@ $fz_18: 18px;
 $fw_400: 400;
 $fw_700: 700;
 
+
 @mixin breakpoint($point) {
 
     @if $point == lg {
-        @media(max-width: 992px) {@content;}
+        @media(max-width: 1115px) {@content;}
+    }
+    @else if $point == mds {
+        @media(max-width: 900px) {@content;}
     }
     @else if $point == md {
         @media(max-width: 768px) {@content;}
@@ -24,6 +28,9 @@ $fw_700: 700;
         @media(max-width: 450px) {@content;}
     }
     @else if $point == xs {
+        @media(max-width: 375px) {@content;}
+    }
+    @else if $point == s {
         @media(max-width: 320px) {@content;}
     }
 }

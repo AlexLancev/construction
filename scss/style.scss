@@ -2,7 +2,6 @@
 @import "global";
 @import "fonts";
 
-
 .header {
   margin-bottom: 70px;
     &__top {
@@ -147,6 +146,7 @@
         width: 100%;
         height: 100vh;
         min-height: 800px;
+        background-color: rgb(71, 71, 71);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 0 0;
@@ -447,6 +447,7 @@
     &__item {
       width: 100%;
       height: 100%;
+      background-color: #575757;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 0 0;
@@ -775,6 +776,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #575757;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 0 0;
@@ -1035,17 +1037,14 @@
       text-transform: uppercase;
     }
     &__body {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 -15px;
+      display: grid;
+      justify-items: stretch;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-gap: 25px;
+      width: 100%;
       height: 100%;
     }
     &__column {
-      width: 100%;
-      max-width: 350px;
-      margin: 0 15px 30px;
       position: relative;
       perspective: 1000px;
       @include breakpoint(md) {
@@ -1271,11 +1270,13 @@
     &__textarea {
       width: 100%;
       min-height: 100px;
+      max-height: 200px;
       margin-bottom: 15px;
       padding: 10px;
       border: 1px solid #828282;
       transition: 0.3s;
       transition-property: all;
+      resize: vertical;
     }
     &__name:hover,
     &__phone:hover,
@@ -1376,11 +1377,10 @@
     }
   }
   &__heading {
-    margin-bottom: 5px;
-    & svg {}
+    margin-bottom: 12px;
     & b {
       margin-left: 7px;
-      vertical-align: super;
+      vertical-align: bottom;
       color: #f8ae03;
       font-weight: 700;
     }
@@ -1425,4 +1425,267 @@
         margin-bottom: 10px;
     }
   }
+
 }
+
+
+/* policy-start */
+
+.privacy__list-wrapper,
+.privacy__list {
+    counter-reset: section;           
+    list-style-type: none;
+  }
+  
+.privacy__items-wrapper::before {
+    counter-increment: section;      
+    content: counters(section,".") ". ";
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+.privacy__item::before {
+    counter-increment: section;      
+    content: counters(section,".") " ";
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+
+.privacy {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.privacy-nav {
+    margin-bottom: 80px;
+}
+
+.privacy-nav__list {
+    display: flex;
+    align-items: center;
+}
+
+.privacy-nav__item {
+    margin-right: 28px;
+    position: relative;
+}
+
+.privacy-nav__item:before,
+.privacy-nav__item:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15px;
+    width: 7px;
+    height: 2px;
+    background-color: #000;
+}
+
+.privacy-nav__item:before {
+    transform: rotate(45deg);
+    transform-origin: right;
+}
+
+.privacy-nav__item:after {
+    transform: rotate(-45deg);
+    transform-origin: right;
+}
+
+.privacy-nav__item:last-child:before,
+.privacy-nav__item:last-child:after {
+    content: none;
+}
+
+.privacy-nav__item:last-child {
+    margin-right: 0;
+}
+
+.privacy-nav__item a {
+    font-size: 20px;
+}
+
+.privacy-nav__link {
+    transition: 0.3s;
+    color: #000000;
+}
+
+.privacy-nav__link:hover {
+    color: #ff0000;
+}
+
+.privacy__container {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.privacy__heading {
+    display: inline-block;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.privacy__heading:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 4px;
+    background-color: #ff5859;
+    border-radius: 3px;
+}
+
+.privacy__text {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #696969;
+}
+
+.privacy__items-wrapper {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.privacy__items-wrapper:last-child {
+    margin-bottom: 0;
+}
+
+.privacy__list {
+    text-align: left;
+    line-height: 1.5;
+    color: #696969;
+}
+
+.privacy__item {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.privacy__item:last-child {
+    margin-bottom: 0;
+}
+
+.privacy__item-item {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.privacy__item-item:last-child {
+    margin-bottom: 0;
+}
+
+.privacy__item-item:before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ff5859;
+}
+
+@media (max-width: 768px) {
+
+    .privacy-nav {
+        margin-bottom: 50px;
+    }
+
+    .privacy__text {
+        font-size: 18px;
+    }
+
+    .privacy__container {
+        margin-bottom: 40px;
+    }
+
+    .privacy__heading {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .privacy__items-wrapper::before {
+        font-size: 30px;
+    }
+
+    .privacy__item {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .privacy__item::before {
+        font-size: 18px;
+    }
+
+    .privacy__items-wrapper {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .privacy {
+        padding: 30px 0;
+    }
+
+    .privacy-nav {
+        margin-bottom: 30px;
+    }
+
+    .privacy-nav__item a {
+        font-size: 14px;
+    }
+
+    .privacy__text {
+        font-size: 16px;
+    }
+
+    .privacy__heading {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .privacy__heading:after {
+        bottom: -10px;
+        width: 100px;
+        height: 3px;
+    }
+
+    .privacy__items-wrapper::before {
+        font-size: 20px;
+    }
+
+    .privacy__container {
+        margin-bottom: 30px;
+    }
+
+    .privacy__item {
+        font-size: 16px;
+    }
+
+    .privacy__item::before {
+        font-size: 16px;
+    }
+
+    .privacy__items-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .privacy__item-item {
+        font-size: 15px;
+    }
+
+}
+
+  
+/* policy-end */
