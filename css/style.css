@@ -558,6 +558,19 @@ a {
         .slider__info span {
           font-size: 22px; } }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
 .feedback {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -902,6 +915,8 @@ a {
       background-repeat: no-repeat; }
 
 .projects {
+  max-width: 1500px;
+  margin: auto;
   margin-bottom: 70px; }
   .projects__row-slider {
     display: -webkit-box;
@@ -1444,7 +1459,7 @@ a {
         margin-bottom: 40px; } }
   .contact-customers__name {
     margin-right: 5px; }
-    @media (max-width: 450px) {
+    @media (max-width: 768px) {
       .contact-customers__name {
         margin-bottom: 10px;
         margin-right: 0; } }
@@ -1568,7 +1583,7 @@ a {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-bottom: 15px; }
-    @media (max-width: 450px) {
+    @media (max-width: 768px) {
       .contact-customers__input-box {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1585,7 +1600,7 @@ a {
     transition: 0.3s;
     -webkit-transition-property: all;
     transition-property: all; }
-    @media (max-width: 450px) {
+    @media (max-width: 768px) {
       .contact-customers__name, .contact-customers__phone {
         width: 100%; } }
   .contact-customers__textarea {
@@ -1610,6 +1625,9 @@ a {
     margin-bottom: 15px; }
   .contact-customers__btn {
     margin-left: auto; }
+    @media (max-width: 768px) {
+      .contact-customers__btn {
+        margin: auto; } }
 
 .checkbox-text {
   vertical-align: top;
